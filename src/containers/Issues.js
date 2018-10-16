@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Issues extends Component {
   render() {
+    if (!this.props.issues) return <div>Search for an issue to start.</div>;
+
     const issueList = this.props.issues.map(issue => (
       <li key={issue._id}>
         <div>id: {issue._id}</div>
@@ -14,11 +17,18 @@ class Issues extends Component {
         <div>Created On: {issue.created_on}</div>
         <div>Updated On: {issue.updated_on}</div>
         <button>Edit</button>
-        <button onClick={this.props.onClick.bind(null, issue)}>Delete</button>
       </li>
     ));
     return <ul>{issueList}</ul>;
   }
 }
 
-export default Issues;
+//  <button onClick={this.props.onClick.bind(null, issue)}>Delete</button>;
+
+function mapStateToProps({ issues }) {
+  return {
+    issues
+  };
+}
+
+export default connect(mapStateToProps)(Issues);
