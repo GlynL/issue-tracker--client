@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Link } from "react-router-dom";
+import { removeIssue } from "../actions/index";
 
 class Issues extends Component {
   render() {
-    if (!this.props.issues) return <div>Search for an issue to start.</div>;
+    if (this.props.issues.length === 0) {
+      return <div>Search for a valid project to start.</div>;
+    }
 
     const issueList = this.props.issues.map(issue => (
       <li key={issue._id}>
@@ -16,14 +21,16 @@ class Issues extends Component {
         <div>Status: {issue.status_text}</div>
         <div>Created On: {issue.created_on}</div>
         <div>Updated On: {issue.updated_on}</div>
-        <button>Edit</button>
+        <Link to={`/${issue.project.name}/${issue._id}`}>Edit</Link>
+        <button onClick={this.props.removeIssue.bind(null, issue)}>
+          Delete
+        </button>
+        ;
       </li>
     ));
     return <ul>{issueList}</ul>;
   }
 }
-
-//  <button onClick={this.props.onClick.bind(null, issue)}>Delete</button>;
 
 function mapStateToProps({ issues }) {
   return {
@@ -31,4 +38,11 @@ function mapStateToProps({ issues }) {
   };
 }
 
-export default connect(mapStateToProps)(Issues);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ removeIssue }, dispatch);
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Issues);

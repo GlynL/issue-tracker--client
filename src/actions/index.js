@@ -17,3 +17,19 @@ export function fetchIssues(project, filter) {
     payload: request
   };
 }
+
+export const REMOVE_ISSUE = "REMOVE_ISSUE";
+
+export function removeIssue(issue) {
+  const id = issue._id;
+  const project = issue.project.name;
+  const request = axios.delete(`${ROOT_URL}/issues/${project}/${id}`);
+  return {
+    type: REMOVE_ISSUE,
+    payload: { request, id }
+  };
+}
+
+export const UPDATE_ISSUE = "UPDATE_ISSUE";
+
+export function updateIssue(issue) {}
