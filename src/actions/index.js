@@ -32,4 +32,10 @@ export function removeIssue(issue) {
 
 export const UPDATE_ISSUE = "UPDATE_ISSUE";
 
-export function updateIssue(issue) {}
+export function updateIssue(project, issue) {
+  const request = axios.put(`${ROOT_URL}/issues/${project}`, issue);
+  return {
+    type: UPDATE_ISSUE,
+    payload: request
+  };
+}

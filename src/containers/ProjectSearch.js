@@ -30,8 +30,6 @@ class ProjectSearch extends Component {
     const name = e.target.name;
     const value = e.target.value;
     if (name === "project") return this.setState({ [name]: value });
-    // if (name === "open") {
-    // }
     const filter = { ...this.state.filter, [name]: value };
     this.setState({ filter });
   }
