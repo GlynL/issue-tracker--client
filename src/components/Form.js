@@ -15,21 +15,14 @@ const defaultIssue = {
 class Form extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      project: "",
-      filter: defaultIssue
+      project: this.props.issue.project.name || "",
+      filter: this.props.issue || defaultIssue
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount() {}
-
-  componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
-      this.setState({ project: this.props.project, filter: this.props.issue });
-    }
   }
 
   handleSubmit(e) {
@@ -117,6 +110,7 @@ class Form extends Component {
             placeholder="created_on"
             onChange={this.handleChange}
             value={filter.created_on}
+            readOnly
           />
           <input
             name="updated_on"
@@ -124,6 +118,7 @@ class Form extends Component {
             placeholder="updated_on"
             onChange={this.handleChange}
             value={filter.updated_on}
+            readOnly
           />
           <input
             id="open"

@@ -9,10 +9,12 @@ export default function(state = [], action) {
       return issues;
     }
     case UPDATE_ISSUE: {
-      const issues = state.filter(
-        issue =>
-          issue._id === action.payload.data._id ? action.payload.data : issue
-      );
+      const issues = state.filter(issue => {
+        console.log(action.payload.data);
+        return issue._id === action.payload.data._id
+          ? action.payload.data
+          : issue;
+      });
       return issues;
     }
     default:

@@ -5,32 +5,9 @@ import { fetchIssues, updateIssue } from "../actions/index";
 import Form from "../components/Form";
 
 class EditIssue extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      project: "",
-      issue: {}
-    };
-  }
-
   async componentDidMount() {
     const { project, id } = this.props.match.params;
-    await this.props.fetchIssues(project, { _id: id });
-    this.setState({ project, issue: this.props.issues[0] });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const { project, filter } = this.state;
-    this.props.updateIssue(project, filter);
-  }
-
-  handleChange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
-    if (name === "project") return this.setState({ [name]: value });
-    const filter = { ...this.state.filter, [name]: value };
-    this.setState({ filter });
+    this.props.fetchIssues(project, { _id: id });
   }
 
   render() {
@@ -40,9 +17,9 @@ class EditIssue extends Component {
         <div>edit issue</div>
         <Form
           type="edit"
-          issue={this.state.issue}
+          issue={this.props.issues[0]}
           formAction={this.props.updateIssue}
-          project={this.state.project}
+          project={this.props.match.params.project}
         />
       </div>
     );
