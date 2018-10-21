@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import "../styles/App.css";
 import Home from "./Home";
-import Search from "./Search";
+import Search from "../containers/Search";
 import EditIssue from "../containers/edit-issue";
 
 const App = () => {

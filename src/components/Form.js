@@ -17,7 +17,7 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      project: this.props.issue.project.name || "",
+      project: (this.props.issue && this.props.issue.project.name) || "",
       filter: this.props.issue || defaultIssue
     };
 

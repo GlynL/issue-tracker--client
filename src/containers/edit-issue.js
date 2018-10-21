@@ -5,7 +5,7 @@ import { fetchIssues, updateIssue } from "../actions/index";
 import Form from "../components/Form";
 
 class EditIssue extends Component {
-  async componentDidMount() {
+  componentDidMount() {
     const { project, id } = this.props.match.params;
     this.props.fetchIssues(project, { _id: id });
   }
