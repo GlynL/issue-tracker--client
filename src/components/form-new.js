@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 
 const defaultIssue = {
-  _id: "",
   issue_title: "",
   issue_text: "",
   created_by: "",
   assigned_to: "",
   status_text: "",
-  created_on: "",
-  updated_on: "",
   open: null
 };
 
@@ -17,8 +14,8 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      project: (this.props.issue && this.props.issue.project.name) || "",
-      filter: this.props.issue || defaultIssue
+      project: "",
+      filter: defaultIssue
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -41,7 +38,6 @@ class Form extends Component {
 
   render() {
     const { project, filter } = this.state;
-    const readOnly = this.props.type === "edit" ? true : false;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -52,15 +48,6 @@ class Form extends Component {
             onChange={this.handleChange}
             value={project}
             required
-            readOnly={readOnly}
-          />
-          <input
-            name="_id"
-            type="text"
-            placeholder="_id"
-            onChange={this.handleChange}
-            value={filter._id}
-            readOnly={readOnly}
           />
           <input
             name="issue_title"
@@ -68,6 +55,7 @@ class Form extends Component {
             placeholder="title"
             onChange={this.handleChange}
             value={filter.issue_title}
+            required
           />
           <input
             name="issue_text"
@@ -75,6 +63,7 @@ class Form extends Component {
             placeholder="text"
             onChange={this.handleChange}
             value={filter.issue_text}
+            required
           />
           <input
             name="created_by"
@@ -82,6 +71,7 @@ class Form extends Component {
             placeholder="created_by"
             onChange={this.handleChange}
             value={filter.created_by}
+            required
           />
           <input
             name="assigned_to"
@@ -97,42 +87,9 @@ class Form extends Component {
             onChange={this.handleChange}
             value={filter.status_text}
           />
-          <input
-            name="created_on"
-            type="text"
-            placeholder="created_on"
-            onChange={this.handleChange}
-            value={filter.created_on}
-            readOnly
-          />
-          <input
-            name="updated_on"
-            type="text"
-            placeholder="updated_on"
-            onChange={this.handleChange}
-            value={filter.updated_on}
-            readOnly
-          />
-          <input
-            id="open"
-            name="open"
-            type="radio"
-            placeholder="open"
-            onChange={this.handleChange}
-            value={true}
-          />
-          <label htmlFor="open">open</label>
-          <input
-            id="closed"
-            name="open"
-            type="radio"
-            placeholder="closed"
-            onChange={this.handleChange}
-            value={false}
-          />
           <label htmlFor="closed">closed</label>
           <button>Submit</button>
-        </form>{" "}
+        </form>
       </div>
     );
   }

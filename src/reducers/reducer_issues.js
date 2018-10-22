@@ -1,4 +1,9 @@
-import { FETCH_ISSUES, REMOVE_ISSUE, UPDATE_ISSUE } from "../actions/index";
+import {
+  FETCH_ISSUES,
+  REMOVE_ISSUE,
+  UPDATE_ISSUE,
+  CREATE_ISSUE
+} from "../actions/index";
 
 export default function(state = [], action) {
   switch (action.type) {
@@ -10,12 +15,14 @@ export default function(state = [], action) {
     }
     case UPDATE_ISSUE: {
       const issues = state.filter(issue => {
-        console.log(action.payload.data);
         return issue._id === action.payload.data._id
           ? action.payload.data
           : issue;
       });
       return issues;
+    }
+    case CREATE_ISSUE: {
+      return state;
     }
     default:
       return state;
