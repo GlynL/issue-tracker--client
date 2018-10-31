@@ -1,0 +1,24 @@
+.nav-list {
+  display: flex;
+  list-style: none;
+  align-items: baseline;
+  background: #344866;
+  margin: 0;
+}
+
+.nav-link {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+
+.nav-link--main {
+  font-size: 1.9rem;
+  padding-right: 1.5rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  border: 1px solid #f2f2f2;
+}

@@ -1,11 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/Home.css";
 
 const Home = () => {
   return (
-    <div>
-      <Link to="/search">Search</Link>
-      <Link to="/new">Create Issue</Link>
+    <div className="bubble home__bubble">
+      <h1>Issue Tracker</h1>
+      <div className="flex">
+        <Link className="link home__link" to="/search">
+          Search
+        </Link>
+        <Link className="link home__link" to="/new">
+          Create Issue
+        </Link>
+      </div>
     </div>
   );
 };

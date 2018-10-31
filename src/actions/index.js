@@ -43,7 +43,6 @@ export function updateIssue(project, issue) {
 export const CREATE_ISSUE = "CREATE_ISSUE";
 
 export function createIssue(project, issue) {
-  console.log(issue);
   const request = axios.post(`${ROOT_URL}/issues/${project}`, issue);
   return {
     type: CREATE_ISSUE,

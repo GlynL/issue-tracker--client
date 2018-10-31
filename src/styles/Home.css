@@ -1,0 +1,22 @@
+.home__bubble {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  width: 300px;
+  margin: 100px auto;
+}
+
+.home__link {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+}
+
+.home__link:hover {
+  border: 1px solid #293658;
+  background: #f2f2f2;
+  color: #293658;
+}

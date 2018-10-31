@@ -1,0 +1,42 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  background: #293658;
+  color: #f2f2f2;
+  margin: 0;
+}
+
+.bubble {
+  background: #344866;
+  padding: 2rem;
+}
+
+.link {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.btn {
+  background: #293658;
+  border: 0.5px solid #f2f2f2;
+  color: #f2f2f2;
+  padding: 0.5rem;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #f2f2f2;
+  border-color: #293658;
+  color: #293658;
+  cursor: pointer;
+}
+
+.btn:active {
+  border-style: inset;
+}

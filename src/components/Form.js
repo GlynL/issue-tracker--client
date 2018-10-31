@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/form.css";
 
 const defaultIssue = {
   _id: "",
@@ -44,8 +45,9 @@ class Form extends Component {
     const readOnly = this.props.type === "edit" ? true : false;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <input
+            className="form__input"
             name="project"
             type="text"
             placeholder="Project name"
@@ -55,6 +57,7 @@ class Form extends Component {
             readOnly={readOnly}
           />
           <input
+            className="form__input"
             name="_id"
             type="text"
             placeholder="_id"
@@ -63,6 +66,7 @@ class Form extends Component {
             readOnly={readOnly}
           />
           <input
+            className="form__input"
             name="issue_title"
             type="text"
             placeholder="title"
@@ -70,6 +74,7 @@ class Form extends Component {
             value={filter.issue_title}
           />
           <input
+            className="form__input"
             name="issue_text"
             type="text"
             placeholder="text"
@@ -77,6 +82,7 @@ class Form extends Component {
             value={filter.issue_text}
           />
           <input
+            className="form__input"
             name="created_by"
             type="text"
             placeholder="created_by"
@@ -84,6 +90,7 @@ class Form extends Component {
             value={filter.created_by}
           />
           <input
+            className="form__input"
             name="assigned_to"
             type="text"
             placeholder="assigned_to"
@@ -91,6 +98,7 @@ class Form extends Component {
             value={filter.assigned_to}
           />
           <input
+            className="form__input"
             name="status_text"
             type="text"
             placeholder="status_text"
@@ -98,6 +106,7 @@ class Form extends Component {
             value={filter.status_text}
           />
           <input
+            className="form__input"
             name="created_on"
             type="text"
             placeholder="created_on"
@@ -106,6 +115,7 @@ class Form extends Component {
             readOnly
           />
           <input
+            className="form__input"
             name="updated_on"
             type="text"
             placeholder="updated_on"
@@ -113,25 +123,38 @@ class Form extends Component {
             value={filter.updated_on}
             readOnly
           />
-          <input
-            id="open"
-            name="open"
-            type="radio"
-            placeholder="open"
-            onChange={this.handleChange}
-            value={true}
-          />
-          <label htmlFor="open">open</label>
-          <input
-            id="closed"
-            name="open"
-            type="radio"
-            placeholder="closed"
-            onChange={this.handleChange}
-            value={false}
-          />
-          <label htmlFor="closed">closed</label>
-          <button>Submit</button>
+          <div className="form__group">
+            <div className="form__group">
+              <input
+                className="form__input"
+                id="open"
+                name="open"
+                type="radio"
+                placeholder="open"
+                onChange={this.handleChange}
+                value={true}
+              />
+              <label className="form__label" htmlFor="open">
+                open
+              </label>
+            </div>
+            <div className="form__group">
+              <input
+                className="form__input"
+                id="closed"
+                name="open"
+                type="radio"
+                placeholder="closed"
+                onChange={this.handleChange}
+                value={false}
+              />
+              <label className="form__label" htmlFor="closed">
+                closed
+              </label>
+            </div>
+          </div>
+
+          <button className="btn btn--form">Submit</button>
         </form>{" "}
       </div>
     );

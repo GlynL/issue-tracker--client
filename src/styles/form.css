@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  margin: 5rem auto;
+  background: #344866;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.form__input {
+  background: #f2f2f2;
+  border: 1px solid #293658;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  color: #333;
+}
+
+.form__group {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.form__label {
+  font-size: 1.4rem;
+}
+
+.btn--form {
+  align-self: flex-end;
+}
