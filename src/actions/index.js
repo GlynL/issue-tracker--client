@@ -1,5 +1,5 @@
 import axios from "axios";
-const ROOT_URL = "http://localhost:8080/api";
+const ROOT_URL = "https://issue-tracker--glyn.herokuapp.com/api";
 
 export const FETCH_ISSUES = "FETCH_ISSUES";
 
