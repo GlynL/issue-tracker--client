@@ -17,6 +17,7 @@ class Search extends Component {
   render() {
     return (
       <React.Fragment>
+        <h1 className="heading">Search Issues</h1>
         <Form formAction={this.props.fetchIssues} type="search" />
         <Issues />
         {this.state.error && <p>{this.state.error}</p>}

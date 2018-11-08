@@ -40,3 +40,12 @@ body {
 .btn:active {
   border-style: inset;
 }
+
+.mgn-r {
+  margin-right: 1rem;
+}
+
+.heading {
+  font-size: 3rem;
+  text-align: center;
+}

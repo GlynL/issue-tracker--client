@@ -1,0 +1,28 @@
+.issues {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.issues__item {
+  background: #344866;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.issues__info {
+  margin: 0.7rem;
+}
+
+.issues__btns {
+  display: flex;
+  margin: 0.7rem;
+}
+
+.issues__message {
+  font-size: 1.5rem;
+  margin-left: 3rem;
+}

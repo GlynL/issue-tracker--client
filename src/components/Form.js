@@ -50,7 +50,7 @@ class Form extends Component {
             className="form__input"
             name="project"
             type="text"
-            placeholder="Project name"
+            placeholder="*Project name"
             onChange={this.handleChange}
             value={project}
             required

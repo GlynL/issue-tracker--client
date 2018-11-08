@@ -14,7 +14,7 @@ class EditIssue extends Component {
     if (this.props.issues.length === 0) return <div>Loading...</div>;
     return (
       <div>
-        <div>edit issue</div>
+        <div className="heading">Edit Issue</div>
         <Form
           type="edit"
           issue={this.props.issues[0]}

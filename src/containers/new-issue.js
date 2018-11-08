@@ -8,7 +8,7 @@ class NewIssue extends Component {
   render() {
     return (
       <div>
-        <div>new issue</div>
+        <div className="heading">New Issue</div>
         <NewForm formAction={this.props.createIssue} />
       </div>
     );
