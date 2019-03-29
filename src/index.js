@@ -13,7 +13,7 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <BrowserRouter basename="/issue-tracker">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </Provider>,
